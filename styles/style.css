@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Topor'; 
+    src: url('Topor-Regular.ttf');
+}
+
+
 /* Стилизация для мобильных устройств и десктопов */
 body {
     display: flex;
@@ -6,7 +12,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #293133;
-    font-family: Arial, sans-serif;
+    font-family: Topor, sans-serif;
     overflow: hidden;
     touch-action: manipulation;
   }
