@@ -30,7 +30,7 @@ body {
   #clicker-btn {
     width: 150px;
     height: 150px;
-    background-image: url("bottle.jpg"); /* Замени на свою ссылку */
+    background-image: url("/bottle.jpg"); /* Замени на свою ссылку */
     background-size: cover;
     background-position: center;
     border: none;
