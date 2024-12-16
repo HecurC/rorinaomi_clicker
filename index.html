@@ -3,56 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кликер Hamster Kombat Style</title>
+  <title>Кликер Hamster Kombat</title>
   <style>
+    /* Основные стили */
     body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Запрет прокрутки */
     }
 
+    .container {
+      text-align: center;
+    }
+
+    #header {
+      font-size: 22px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    #counter {
+      font-size: 28px;
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* Округлая кнопка */
     #clicker-btn {
-      margin-top: 100px;
-      background-color: #fcbc4e;
-      color: white;
+      width: 150px;
+      height: 150px;
+      background-image: url('https://i.imgur.com/9v3VSpA.png'); /* Замени ссылку на свою картинку */
+      background-size: cover;
+      background-position: center;
       border: none;
-      padding: 20px 40px;
-      font-size: 24px;
+      border-radius: 50%;
       cursor: pointer;
-      border-radius: 12px;
-      transition: transform 0.1s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
     }
 
     #clicker-btn:active {
       transform: scale(0.95);
-    }
-
-    #counter {
-      margin-top: 20px;
-      font-size: 32px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    #header {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #777;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
 <body>
-  <div id="header">Добро пожаловать в Hamster Kombat!</div>
-  <div id="counter">0 кликов</div>
-  <button id="clicker-btn">Кликни!</button>
+  <div class="container">
+    <div id="header">Кликер Hamster Kombat</div>
+    <div id="counter">0 кликов</div>
+    <button id="clicker-btn"></button>
+  </div>
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
     // Инициализация Telegram WebApp
     let tg = window.Telegram.WebApp;
-    tg.expand(); // Растягиваем приложение на весь экран
+    tg.expand(); // Разворачиваем приложение на весь экран
 
     // Логика кликера
     let count = 0;
@@ -63,16 +76,11 @@
       count++;
       counterDisplay.innerText = `${count} кликов`;
 
-      // Добавляем вибрацию для лучшего UX
+      // Добавляем легкую вибрацию для мобильных устройств
       if (navigator.vibrate) {
         navigator.vibrate(50);
       }
     });
-
-    // Опционально: отправляем данные боту (заготовка)
-    function sendProgressToBot() {
-      tg.sendData(JSON.stringify({ clicks: count }));
-    }
   </script>
 </body>
 </html>
