@@ -3,84 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rorinaomi clicker</title>
-  <style>
-    /* Основные стили */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #293133;
-      font-family: Arial, sans-serif;
-      overflow: hidden; /* Запрет прокрутки */
-    }
-
-    .container {
-      text-align: center;
-    }
-
-    #header {
-      font-size: 22px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    #counter {
-      font-size: 28px;
-      color: #333;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    /* Округлая кнопка */
-    #clicker-btn {
-      width: 150px;
-      height: 150px;
-      background-image: url(bottle.jpg);
-      background-size: cover;
-      background-position: center;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-    }
-
-    #clicker-btn:active {
-      transform: scale(0.95);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-  </style>
+  <title>Кликер Rorinaomi</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <div class="container">
-    <div id="header">Rorinaomi clicker</div>
+    <div id="header">Кликер Rorinaomi</div>
     <div id="counter">0 кликов</div>
     <button id="clicker-btn"></button>
   </div>
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script>
-    // Инициализация Telegram WebApp
-    let tg = window.Telegram.WebApp;
-    tg.expand(); // Разворачиваем приложение на весь экран
-
-    // Логика кликера
-    let count = 0;
-    const button = document.getElementById('clicker-btn');
-    const counterDisplay = document.getElementById('counter');
-
-    button.addEventListener('click', () => {
-      count++;
-      counterDisplay.innerText = `${count} кликов`;
-
-      // Добавляем легкую вибрацию для мобильных устройств
-      if (navigator.vibrate) {
-        navigator.vibrate(50);
-      }
-    });
-  </script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
