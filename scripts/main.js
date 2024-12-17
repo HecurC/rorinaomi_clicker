@@ -1,20 +1,18 @@
-// Telegram WebApp API инициализация
+// Telegram WebApp API 
 let tg = window.Telegram.WebApp;
-tg.expand(); // Полный экран
+tg.expand();
 
 let count = 0;
 const button = document.getElementById('clicker-btn');
 const counterDisplay = document.getElementById('counter');
 
-// Telegram ID пользователя
 const telegramId = tg.initDataUnsafe?.user?.id || "guest";
 
-// Обработчик кликов
 button.addEventListener('click', async () => {
   count++;
   counterDisplay.innerText = `${count} кликов`;
 
-  // Отправка данных на сервер
+
   await fetch('https://your-server.com/update', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -22,6 +20,6 @@ button.addEventListener('click', async () => {
   });
 
   if (navigator.vibrate) {
-    navigator.vibrate(50); // Вибрация на телефоне
+    navigator.vibrate(50); 
   }
 });
