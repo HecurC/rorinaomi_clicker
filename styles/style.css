@@ -1,54 +1,43 @@
 @font-face {
-    font-family: 'Topor'; 
-    src: url('Topor-Regular.ttf');
+  font-family: 'Topor';
+  src: url('Topor-Regular.ttf');
 }
 
-
-/* Стилизация для мобильных устройств и десктопов */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #293133;
-    font-family: Topor, sans-serif;
-    overflow: hidden;
-    touch-action: manipulation;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  #header {
-    font-size: 22px;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  
-  #counter {
-    font-size: 28px;
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  #clicker-btn {
-    width: 150px;
-    height: 150px;
-    background-image: url("bottle.jpg"); /* Замени на свою ссылку */
-    background-size: cover;
-    background-position: center;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-  }
-  
-  #clicker-btn:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
+  background: linear-gradient(135deg, #000000, #161a21);
+  font-family: 'Topor', sans-serif;
+  margin: 0;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+/* Контейнер с кнопкой и текстом по центру */
+#header {
+  font-size: 22px;
+  color: #fff;
+}
+
+#counter {
+  font-size: 28px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#clicker-btn {
+  width: 150px;
+  height: 150px;
+  background-image: url("bottle.jpg");
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#clicker-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
